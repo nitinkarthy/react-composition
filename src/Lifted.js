@@ -1,5 +1,16 @@
 import React, { useState } from "react";
 
+const firstStyle = {
+  backgroundColor: "brown",
+  padding: "5px"
+};
+
+const secondStyle = {
+  backgroundColor: "chartreuse",
+  padding: "3px",
+  border: "2px solid white"
+};
+
 export const RootComponent = () => {
   const [flag, setFlag] = useState(true);
   const liftedTarget = <TargetLeafComponent flag={flag} setFlag={setFlag} />;
@@ -9,7 +20,7 @@ export const RootComponent = () => {
 export const FirstLevelInnerComponent = ({ liftedComponent }) => {
   //extracting props for proxying. NO actual use here
   return (
-    <div style={{ backgroundColor: "brown" }}>
+    <div style={firstStyle}>
       <SecondLevelInnerComponent liftedComponent={liftedComponent} />
     </div>
   );
@@ -17,11 +28,7 @@ export const FirstLevelInnerComponent = ({ liftedComponent }) => {
 
 export const SecondLevelInnerComponent = ({ liftedComponent }) => {
   //extracting props for proxying. NO actual use here
-  return (
-    <div style={{ margin: "5px", border: "2px solid white" }}>
-      {liftedComponent}
-    </div>
-  );
+  return <div style={secondStyle}>{liftedComponent}</div>;
 };
 
 export const TargetLeafComponent = ({ flag, setFlag }) => {
