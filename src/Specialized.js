@@ -1,5 +1,16 @@
 import React, { useState } from "react";
 
+const firstStyle = {
+  backgroundColor: "red",
+  padding: "5px"
+};
+
+const secondStyle = {
+  backgroundColor: "darkseagreen",
+  padding: "3px",
+  border: "2px solid white"
+};
+
 export const RootComponent = () => {
   const [flag, setFlag] = useState(true);
   return <FirstLevelInnerComponent flag={flag} setFlag={setFlag} />;
@@ -8,7 +19,7 @@ export const RootComponent = () => {
 export const FirstLevelInnerComponent = ({ flag, setFlag }) => {
   //extracting props for proxying. NO actual use here
   return (
-    <div style={{ backgroundColor: "red" }}>
+    <div style={firstStyle}>
       <SecondLevelInnerComponent flag={flag} setFlag={setFlag} />
     </div>
   );
@@ -17,7 +28,7 @@ export const FirstLevelInnerComponent = ({ flag, setFlag }) => {
 export const SecondLevelInnerComponent = ({ flag, setFlag }) => {
   //extracting props for proxying. NO actual use here
   return (
-    <div style={{ margin: "5px", border: "2px solid yellow" }}>
+    <div style={secondStyle}>
       <TargetLeafComponent flag={flag} setFlag={setFlag} />
     </div>
   );

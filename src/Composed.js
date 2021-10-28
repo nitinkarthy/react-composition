@@ -1,5 +1,16 @@
 import React, { useState } from "react";
 
+const firstStyle = {
+  backgroundColor: "blue",
+  padding: "5px"
+};
+
+const secondStyle = {
+  backgroundColor: "aquamarine",
+  padding: "3px",
+  border: "2px solid white"
+};
+
 //Composition site
 export const RootComponent = () => {
   const [flag, setFlag] = useState(true);
@@ -15,15 +26,13 @@ export const RootComponent = () => {
 //Opened up for composition
 export const FirstLevelInnerComponent = ({ children }) => {
   //extracting props for proxying. NO actual use here
-  return <div style={{ backgroundColor: "blue" }}>{children}</div>;
+  return <div style={firstStyle}>{children}</div>;
 };
 
 //Opened up for composition
 export const SecondLevelInnerComponent = ({ children }) => {
   //extracting props for proxying. NO actual use here
-  return (
-    <div style={{ margin: "5px", border: "2px solid green" }}>{children}</div>
-  );
+  return <div style={secondStyle}>{children}</div>;
 };
 
 export const TargetLeafComponent = ({ flag, setFlag }) => {
