@@ -8,4 +8,4 @@ There are 3 approaches presented
 | Composed | Avoids prop drilling, improved readability - the state variable definition is closer to the usage of it |🙅🏽‍♂️|
 | Lifted | Reduced number of props to be drilled down |Not as readable as composed approach|
 
-This repo is to supplement the [blog article](https://nitin-karthy.medium.com/when-to-use-render-props-pattern-8634649fcfe8) on the same.
+This repo is to supplement the [blog article](https://nitin-karthy.medium.com/using-composition-to-reduce-prop-drilling-in-react-375dafbb681d) on the same.
