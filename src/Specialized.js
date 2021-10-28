@@ -17,7 +17,6 @@ export const RootComponent = () => {
 };
 
 export const FirstLevelInnerComponent = ({ flag, setFlag }) => {
-  //extracting props for proxying. NO actual use here
   return (
     <div style={firstStyle}>
       <SecondLevelInnerComponent flag={flag} setFlag={setFlag} />
@@ -26,7 +25,6 @@ export const FirstLevelInnerComponent = ({ flag, setFlag }) => {
 };
 
 export const SecondLevelInnerComponent = ({ flag, setFlag }) => {
-  //extracting props for proxying. NO actual use here
   return (
     <div style={secondStyle}>
       <TargetLeafComponent flag={flag} setFlag={setFlag} />

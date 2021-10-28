@@ -23,15 +23,11 @@ export const RootComponent = () => {
   );
 };
 
-//Opened up for composition
 export const FirstLevelInnerComponent = ({ children }) => {
-  //extracting props for proxying. NO actual use here
   return <div style={firstStyle}>{children}</div>;
 };
 
-//Opened up for composition
 export const SecondLevelInnerComponent = ({ children }) => {
-  //extracting props for proxying. NO actual use here
   return <div style={secondStyle}>{children}</div>;
 };
 
